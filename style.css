@@ -1,0 +1,44 @@
+@import url(./normalize.css);
+@import url(./reset.css);
+
+body{
+  background-color: #B7CE95;
+}
+
+/* 숨김 컨텐츠 */ 
+.a11y-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+header, main{
+  width: 1540px;
+  box-sizing: border-box; 
+  margin: 0 auto;
+}
+
+/*헤더*/ 
+header{
+  background-color: pink;
+}
+
+.menu{
+  background-color: yellow;
+}
+
+.member{
+  background-color: #F68D2E;
+}
+
+
+/*메인*/
+main{
+  background-color: skyblue;
+}
+
+
+
