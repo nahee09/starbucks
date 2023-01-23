@@ -1,8 +1,10 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 
-body{
-  background-color: #B7CE95;
+*, 
+*::before, 
+*::after{
+  box-sizing: border-box; 
 }
 
 /* 숨김 컨텐츠 */ 
@@ -15,29 +17,203 @@ body{
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
+body{
+  /* background-color: #B7CE95; */
+  font-family: SoDoSans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 header, main{
   width: 1540px;
-  box-sizing: border-box; 
   margin: 0 auto;
 }
 
 /*헤더*/ 
 header{
-  background-color: pink;
+  /* background-color: pink; */
+  height: 100px;
+  padding: 0 50px;
+  font-weight: 700;
+  color: black;
+}
+
+/* 왼쪽 상단 메뉴 */
+.logo{
+  /* background-color: lime; */
+  float: left;
+  margin: 25px 30px 25px 0px;
 }
 
 .menu{
-  background-color: yellow;
+  /* background-color: yellow; */
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  position: relative;
 }
 
+.menuItem{
+  float:left;
+  margin: 42px 12px;
+}
+
+.menuItem:hover, 
+.findStore:hover{
+  color: #008248;
+}
+
+
+.menuItem.is-active::after{
+  content: '';
+  display: block;
+  border-bottom: 8px solid #008248;
+  /* margin-top: 35px; */
+  transform: translateY(60px);
+  width: 80px;
+  position: absolute;
+  top: 35px;
+}
+
+
+/* 오른쪽 상단 메뉴 */
 .member{
-  background-color: #F68D2E;
+  /* background-color: #F68D2E; */
+  display: flow-root;
+  float: right;
+  width: 350px;
+  margin-top: 35px;
+}
+
+.member > li > a{
+  margin-left: 15px;
+}
+
+
+.findStore{
+  font-size: 0.8rem;
+  float: left;
+  margin-right: 25px;
+}
+
+.findStore::before{
+  margin-right: 10px;
+  font-size: 1.3rem;
+  content: "\f3c5";
+  font-family: "Font Awesome 5 Free";
+}
+
+.signIn:hover{
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.signIn{
+  float: left;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 8px 15px;
+  background-color: white;
+}
+
+.join{
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: black;
+  color: white;
+  padding: 8px 15px;
+}
+
+.member .join{
+  float:left;
+}
+
+.member .join:hover{
+  background: rgba(0, 0, 0, 0.7);
 }
 
 
 /*메인*/
-main{
-  background-color: skyblue;
+
+.mainTitleWrapper{
+  background-color:#1e3932;
+  color: #f1f8f6;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 17px 0 17px 50px;
+  width: 1540px; 
+  height: 50px;
+  position: sticky; /*IE에서는 지원X*/
+  top: 0px;
+  z-index: 99999;
+}
+
+
+.rewards{
+  background-color: #d4e9e2;
+  height: 800px;
+  position: relative;
+  
+}
+
+.rewardsContents{
+  /* background-color: cyan; */
+  position: absolute;
+  top: 280px;
+  left: 50px;
+  width: 380px; 
+  height: 280px;
+  z-index: 9999;
+}
+
+.rewardsContentTitle{
+  /* background-color: #A7C6ED; */
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  width: 260px;
+}
+
+.rewardsContentSub{
+  /* background-color: #485CC7; */
+  font-size: 1.2rem;
+  line-height: 90px;
+  letter-spacing: 0.5px;
+}
+
+.rewards .join{
+  background-color: #008248;
+  border-color: transparent;
+  display: block;
+  margin-right: 278px;
+  margin-bottom: -10px;
+  height:35px;
+  line-height: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.rewards .join:hover{
+  background: rgba(24, 115, 57, 0.8);
+}
+
+.joinNow{
+  /* background-color: #DBE442; */
+  text-decoration: underline;
+}
+
+.rewardsVisual{
+  position: absolute;
+  top: 0px;
+  background-color: yellow;
+  width: 1540px;
+  height: 800px;
+  background: url('./assets/img/visualStar.png') no-repeat 50% 60%;
+  background-size: 160%;
 }
 
 
